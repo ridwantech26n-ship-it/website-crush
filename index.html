@@ -1,0 +1,620 @@
+<!DOCTYPE html><html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Untuk Seseorang yang Istimewa 💗</title><style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: Arial, sans-serif;
+    color: white;
+    background: linear-gradient(
+        to bottom,
+        #08132f 0%,
+        #263b68 40%,
+        #795b91 70%,
+        #e19ab2 100%
+    );
+}
+
+/* LANGIT DAN BULAN */
+.sky {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.moon {
+    position: absolute;
+    top: 7%;
+    right: 12%;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background: #fff5d6;
+    box-shadow: 0 0 35px #fff0bc;
+}
+
+.star {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle {
+    from { opacity: .2; }
+    to { opacity: 1; }
+}
+
+/* AWAN BERGERAK */
+.cloud {
+    position: absolute;
+    left: -220px;
+    font-size: 48px;
+    opacity: .55;
+    animation: cloudMove 35s linear infinite;
+}
+
+.cloud.one { top: 15%; }
+.cloud.two {
+    top: 28%;
+    font-size: 36px;
+    animation-duration: 48s;
+    animation-delay: -20s;
+}
+
+.cloud.three {
+    top: 8%;
+    font-size: 30px;
+    animation-duration: 55s;
+    animation-delay: -30s;
+}
+
+@keyframes cloudMove {
+    from { left: -220px; }
+    to { left: calc(100% + 220px); }
+}
+
+/* PERBUKITAN */
+.hill {
+    position: fixed;
+    bottom: 0;
+    width: 120%;
+    height: 30vh;
+    left: -10%;
+    border-radius: 50% 50% 0 0;
+    background: linear-gradient(#304b5b, #172d39);
+    z-index: 1;
+}
+
+.hill.back {
+    bottom: 7vh;
+    left: -25%;
+    height: 25vh;
+    background: #3b526d;
+    opacity: .8;
+}
+
+/* POHON */
+.tree {
+    position: fixed;
+    bottom: 9vh;
+    font-size: clamp(55px, 12vw, 100px);
+    transform-origin: bottom center;
+    animation: treeWind 4s ease-in-out infinite alternate;
+    z-index: 2;
+}
+
+.tree.left {
+    left: 2%;
+}
+
+.tree.right {
+    right: 2%;
+    animation-delay: -2s;
+}
+
+@keyframes treeWind {
+    from { rotate: -2deg; }
+    to { rotate: 2deg; }
+}
+
+/* BUNGA */
+.garden {
+    position: fixed;
+    inset: auto 0 0;
+    height: 22vh;
+    background: linear-gradient(#234b42, #102d29);
+    z-index: 3;
+    overflow: hidden;
+}
+
+.flower {
+    position: absolute;
+    bottom: 5%;
+    font-size: 25px;
+    transform-origin: bottom center;
+    animation: flowerWind 2.8s ease-in-out infinite alternate;
+}
+
+@keyframes flowerWind {
+    from { rotate: -8deg; }
+    to { rotate: 8deg; }
+}
+
+.grass {
+    position: absolute;
+    bottom: 0;
+    height: 35px;
+    width: 3px;
+    background: #74b78c;
+    border-radius: 100%;
+    transform-origin: bottom center;
+    animation: grassWind 1.8s ease-in-out infinite alternate;
+}
+
+@keyframes grassWind {
+    from { rotate: -12deg; }
+    to { rotate: 12deg; }
+}
+
+/* KUNANG-KUNANG */
+.firefly {
+    position: fixed;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #fff8a6;
+    box-shadow: 0 0 12px #fff8a6;
+    animation: fireflyMove 5s ease-in-out infinite alternate;
+    z-index: 4;
+    pointer-events: none;
+}
+
+@keyframes fireflyMove {
+    from { transform: translate(0, 0); opacity: .2; }
+    to { transform: translate(25px, -35px); opacity: 1; }
+}
+
+/* ISI WEBSITE */
+main {
+    position: relative;
+    z-index: 5;
+    width: min(92%, 560px);
+    min-height: 100vh;
+    margin: auto;
+    padding: 65px 8px 180px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.badge {
+    color: #ffe1f1;
+    letter-spacing: 3px;
+    font-size: 11px;
+    margin-bottom: 12px;
+    text-shadow: 0 0 10px #ff80bd;
+}
+
+h1 {
+    font-size: clamp(28px, 8vw, 44px);
+    margin: 5px 0 18px;
+    color: #ffe7f4;
+    text-shadow: 0 0 18px #ff7cba;
+}
+
+.heart {
+    font-size: 65px;
+    animation: heartbeat 1.3s infinite;
+    filter: drop-shadow(0 0 14px #ff76ba);
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.13); }
+}
+
+#message {
+    max-width: 470px;
+    min-height: 105px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    line-height: 1.8;
+    color: #fff6fb;
+    text-shadow: 0 2px 8px #17203e;
+    transition: opacity .3s;
+}
+
+button {
+    border: 1px solid #ffd5ec;
+    border-radius: 25px;
+    padding: 12px 18px;
+    margin: 7px 4px;
+    color: #442345;
+    background: linear-gradient(135deg, #ffc1e0, #f5d3ff);
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 14px #ff9dce55;
+}
+
+button:active {
+    transform: scale(.96);
+}
+
+button:disabled {
+    opacity: .55;
+    cursor: default;
+}
+
+#special {
+    max-width: 450px;
+    min-height: 30px;
+    margin: 8px 0;
+    color: #ffe3f2;
+    font-size: 15px;
+    line-height: 1.7;
+    text-shadow: 0 2px 8px #17203e;
+}
+
+/* FORMULIR RINGKAS DAN TRANSPARAN */
+.reply {
+    width: 100%;
+    margin-top: 30px;
+    padding: 10px;
+    background: transparent;
+}
+
+.reply h2 {
+    font-size: 19px;
+    color: #ffe7f4;
+    text-shadow: 0 0 10px #ff7cba;
+}
+
+.reply p {
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.reply input,
+.reply textarea {
+    display: block;
+    width: 100%;
+    margin: 9px 0;
+    padding: 12px;
+    border: 1px solid #ffe0f0aa;
+    border-radius: 12px;
+    outline: none;
+    background: #10172c66;
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+.reply input::placeholder,
+.reply textarea::placeholder {
+    color: #f4e6f0;
+}
+
+.reply textarea {
+    min-height: 75px;
+    resize: vertical;
+}
+
+.reply button {
+    margin-top: 4px;
+}
+
+.note {
+    font-size: 11px;
+    opacity: .85;
+}
+
+/* HALAMAN TERIMA KASIH */
+#thankYou {
+    position: fixed;
+    inset: 0;
+    z-index: 20;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    text-align: center;
+    background: linear-gradient(
+        180deg,
+        #101a40,
+        #463b79,
+        #d477a7
+    );
+}
+
+.thank-content {
+    max-width: 430px;
+    animation: appear 1s ease;
+}
+
+.thank-heart {
+    font-size: 75px;
+    animation: heartbeat 1.3s infinite;
+}
+
+.thank-content h2 {
+    color: #ffe3f2;
+    font-size: 34px;
+    text-shadow: 0 0 15px #ff72b6;
+}
+
+.thank-content p {
+    line-height: 1.9;
+    font-size: 16px;
+}
+
+@keyframes appear {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 480px) {
+    main {
+        padding-top: 45px;
+    }
+
+    #message {
+        font-size: 15px;
+    }
+
+    .tree {
+        bottom: 12vh;
+    }
+
+    .garden {
+        height: 19vh;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
+</style></head><body><div class="sky" id="sky">
+    <div class="moon"></div>
+    <div class="cloud one">☁️</div>
+    <div class="cloud two">☁️</div>
+    <div class="cloud three">☁️</div>
+</div><div class="hill back"></div>
+<div class="hill"></div><div class="tree left">🌳</div>
+<div class="tree right">🌲</div><div class="garden" id="garden"></div><main>
+    <div class="badge">A LITTLE MESSAGE FROM MY HEART</div><div class="heart">💗</div>
+
+<h1>Untuk Latifah</h1>
+
+<p id="message">
+    Ada seseorang yang membuat hari biasa terasa istimewa.
+    Mungkin kamu tidak menyadarinya, tetapi kamu adalah salah
+    satu alasan mengapa sebuah senyuman bisa muncul begitu saja. 🌸
+</p>
+
+<button id="nextButton" onclick="nextMessage()">
+    Baca Pesan Berikutnya 💌
+</button>
+
+<div>
+    <button onclick="showSurprise()">
+        Kejutan Kecil ✨
+    </button>
+
+    <button onclick="showConfession()">
+        Pesan Spesial 💖
+    </button>
+</div>
+
+<div id="special"></div>
+
+<section class="reply">
+    <h2>Kirim Pesan untukku 💌</h2>
+
+    <p>
+        Aku ingin tahu apa yang ingin kamu sampaikan.
+        Tulis pesanmu di bawah ini. 🌷
+    </p>
+
+    <!-- GANTI EMAIL DI BAWAH DENGAN EMAIL KAMU -->
+    <form
+        id="replyForm"
+        action="https://formsubmit.co/ridwantech26n@gmail.com"
+        method="POST"
+    >
+        <input
+            type="text"
+            name="nama"
+            placeholder="Nama kamu (boleh nama panggilan)"
+            maxlength="60"
+            required
+        >
+
+        <textarea
+            name="pesan"
+            placeholder="Tulis pesanmu di sini..."
+            maxlength="2000"
+            required
+        ></textarea>
+
+        <input
+            type="hidden"
+            name="_subject"
+            value="Pesan baru dari website crush 💗"
+        >
+
+        <input
+            type="hidden"
+            name="_template"
+            value="table"
+        >
+
+        <button type="submit">
+            Kirim Pesan 💌
+        </button>
+    </form>
+
+    <p class="note">
+        Pesanmu akan dikirim melalui layanan FormSubmit.
+    </p>
+</section>
+
+</main><!-- HALAMAN TERIMA KASIH --><section id="thankYou">
+    <div class="thank-content">
+        <div class="thank-heart">💗</div>    <h2>Terima Kasih!</h2>
+
+    <p>
+        Terima kasih sudah meluangkan waktu untuk
+        mengirimkan pesan untukku. 🌸
+    </p>
+
+    <p>
+        Sesederhana apa pun kata-katamu, aku tetap
+        menghargai setiap huruf yang kamu tulis.
+        Terkadang, hal kecil dari seseorang bisa
+        membuat hari terasa lebih indah. ✨
+    </p>
+
+    <p>
+        Semoga hari-harimu selalu dipenuhi kebahagiaan.
+        Jangan lupa tersenyum, karena dunia terasa
+        sedikit lebih indah saat kamu bahagia. 💕
+    </p>
+
+    <p>
+        <strong>Terima kasih sudah menjadi bagian
+        dari cerita kecil ini. 🌷</strong>
+    </p>
+</div>
+
+</section><script>
+// PESAN YANG TIDAK BERULANG
+const messages = [
+    "Kalau suatu hari kamu merasa lelah, semoga kamu ingat bahwa kamu tetap berharga dan layak mendapatkan hal-hal baik. 🌷",
+
+    "Aku tidak tahu ke mana cerita ini akan berjalan, tetapi aku senang bisa mengenal seseorang seperti kamu. 💗",
+
+    "Ada hal-hal sederhana yang sulit dijelaskan dengan kata-kata. Salah satunya adalah perasaan senang saat melihat seseorang tersenyum. ✨",
+
+    "Aku tidak berharap menjadi orang paling istimewa dalam hidupmu. Aku hanya berharap kehadiranku bisa membawa sedikit kebahagiaan untukmu. 🌸",
+
+    "Terima kasih sudah hadir di dunia ini. Tetaplah menjadi dirimu sendiri, karena kamu tidak perlu menjadi orang lain untuk layak dihargai. 💖"
+];
+
+let messageIndex = 0;
+
+function nextMessage() {
+    const messageElement = document.getElementById("message");
+    const button = document.getElementById("nextButton");
+
+    if (messageIndex < messages.length) {
+        messageElement.style.opacity = "0";
+
+        setTimeout(() => {
+            messageElement.textContent = messages[messageIndex];
+            messageElement.style.opacity = "1";
+            messageIndex++;
+
+            if (messageIndex >= messages.length) {
+                button.textContent = "Semua Pesan Sudah Dibaca 💗";
+                button.disabled = true;
+            }
+        }, 250);
+    }
+}
+
+function showSurprise() {
+    document.getElementById("special").textContent =
+        "🎁 Kejutan kecil: semoga hari ini membawa satu alasan baru untuk kamu tersenyum. Kamu pantas mendapatkan kebahagiaan.";
+}
+
+function showConfession() {
+    document.getElementById("special").textContent =
+        "💌 Aku ingin jujur: mengenalmu adalah hal yang menyenangkan. Aku tidak ingin memaksakan perasaan apa pun, hanya ingin kamu tahu bahwa kamu dihargai.";
+}
+
+// MEMBUAT BINTANG
+for (let i = 0; i < 65; i++) {
+    const star = document.createElement("div");
+    star.className = "star";
+    star.style.left = Math.random() * 100 + "%";
+    star.style.top = Math.random() * 65 + "%";
+    star.style.animationDelay = Math.random() * 3 + "s";
+    document.getElementById("sky").appendChild(star);
+}
+
+// MEMBUAT BUNGA DI TAMAN
+const garden = document.getElementById("garden");
+const flowerTypes = ["🌸", "🌷", "🌼", "🌺", "🌻"];
+
+for (let i = 0; i < 90; i++) {
+    const flower = document.createElement("div");
+    flower.className = "flower";
+    flower.textContent =
+        flowerTypes[Math.floor(Math.random() * flowerTypes.length)];
+
+    flower.style.left = Math.random() * 100 + "%";
+    flower.style.bottom = Math.random() * 45 + "%";
+    flower.style.fontSize = (15 + Math.random() * 18) + "px";
+    flower.style.animationDelay = Math.random() * 3 + "s";
+    flower.style.animationDuration = (2 + Math.random() * 2) + "s";
+
+    garden.appendChild(flower);
+}
+
+// MEMBUAT RUMPUT
+for (let i = 0; i < 65; i++) {
+    const grass = document.createElement("div");
+    grass.className = "grass";
+    grass.style.left = Math.random() * 100 + "%";
+    grass.style.height = (15 + Math.random() * 30) + "px";
+    grass.style.animationDelay = Math.random() * 2 + "s";
+    garden.appendChild(grass);
+}
+
+// MEMBUAT KUNANG-KUNANG
+for (let i = 0; i < 24; i++) {
+    const firefly = document.createElement("div");
+    firefly.className = "firefly";
+    firefly.style.left = Math.random() * 100 + "%";
+    firefly.style.top = (30 + Math.random() * 60) + "%";
+    firefly.style.animationDelay = Math.random() * 5 + "s";
+    document.body.appendChild(firefly);
+}
+
+// MENANGANI FORMULIR
+const form = document.getElementById("replyForm");
+
+form.addEventListener("submit", function(event) {
+    // Form tetap dikirim ke FormSubmit.
+    // Halaman terima kasih ditampilkan setelah pengguna
+    // kembali dari halaman FormSubmit jika pengalihan
+    // diatur melalui parameter _next.
+});
+
+// Menampilkan ucapan terima kasih jika URL memiliki ?terkirim=1
+// Ini hanya penanda tampilan, bukan bukti bahwa email sudah diterima.
+if (new URLSearchParams(window.location.search).get("terkirim") === "1") {
+    document.getElementById("thankYou").style.display = "flex";
+}
+</script></body>
+</html>
